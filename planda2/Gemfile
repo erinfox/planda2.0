@@ -64,4 +64,6 @@ gem 'httparty'
 
 gem 'compliments'
 
+gem 'redis'
+
 gem 'sidekiq'

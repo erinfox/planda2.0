@@ -1,7 +1,45 @@
-<% @tasks.each do |task|%>
+
+<a href="/tasks/new"> Add a New Task </a><br><br>
+
+Once:<br>
+To Do:<br>
+<% @onceTasksToDo.each do |task|%>
 <a href="/tasks/<%=task["id"]%>"><%=task["name"]%></a><br>
 <% end %>
+
+Done:<br>
+<% @onceTasksDone.each do |task|%>
+<a href="/tasks/<%=task["id"]%>"><%=task["name"]%></a><br>
+<% end %>
+<br>
+<br>
+
+
+Daily:<br>
+To Do:<br>
+<% @dayTasksToDo.each do |task|%>
+<a href="/tasks/<%=task["id"]%>"><%=task["name"]%></a><br>
+<% end %>
+<br>
+Done:<br>
+<% @dayTasksDone.each do |task|%>
+<a href="/tasks/<%=task["id"]%>"><%=task["name"]%></a><br>
+<% end %>
+<br>
+<br>
+Weekly:<br>
+To Do:<br>
+<% @weekTasksToDo.each do |task|%>
+<a href="/tasks/<%=task["id"]%>"><%=task["name"]%></a><br>
+<% end %>
+Done<br>
+<% @weekTasksDone.each do |task|%>
+<a href="/tasks/<%=task["id"]%>"><%=task["name"]%></a><br>
+<% end %>
+
+
 <ul>
   <li><a href="/tasks/new"> Add a New Task </a></li>
   <li><a href="/teams"> Your teams </a></li>
 </ul>
+
