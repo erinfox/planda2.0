@@ -1,7 +1,35 @@
-<%= form_for @task, :method => :PUT do |c| %>
 
- Name: <%= text_field_tag :name, @task.name %> <br>
- Frequency: <%= text_field_tag :frequency, @task.frequency %> <br>
- Completeness Level: <%= text_field_tag :completeness_level, @task.completeness_level %> <br>
-    <%= c.submit %>
-<% end %>
+
+
+<form action ="/tasks/:id/edit" method="POST">
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+  New Name <input name="name"><br><br>
+ Frequency: <select name="frequency">
+  <option value ="once">Once</option>
+  <option value ="daily">Daily</option>
+  <option value ="weekly">Weekly</option>
+  </select><br><br>
+
+
+
+  Completeness Level: <select name="completeness_level">
+  <option value ="still need to start">Still Need to Start</option>
+  <option value ="barely started">Barely Started</option>
+  <option value ="half way through">Half Way Through</option>
+  <option value ="almost done">Almost Done</option>
+  <option value ="finished">Finished!</option>
+
+  </select><br><br>
+
+
+  <input name = 'user_id' type = 'hidden' value='@user[:id]'>
+  <button type="submit">Update Tasks</button>
+
+</form>
+
+
+
+
+
+<form action = "/tasks"><button type="submit">Cancel</button></form>
