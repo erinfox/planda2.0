@@ -20,9 +20,15 @@ end
     @task=Task.find(params[:id])
     # @completionRate = @task[:completed]/@task[:cycles]
     @comments=Comment.where(task_id: params[:id])
+
+    @compliment = Compliment.new
+    @playlistArray = ["https://open.spotify.com/embed?uri=spotify:user:spotify:playlist:37i9dQZF1DWUNIrSzKgQbP","https://open.spotify.com/embed?uri=spotify:user:spotify:playlist:37i9dQZF1DWU0ScTcjJBdj","https://open.spotify.com/embed?uri=spotify:user:spotify:playlist:37i9dQZF1DX7KNKjOK0o75","https://open.spotify.com/embed?uri=spotify:user:spotify:playlist:37i9dQZF1DX6ziVCJnEm59","https://open.spotify.com/embed?uri=spotify:user:spotify:playlist:37i9dQZF1DWSqmBTGDYngZ","https://open.spotify.com/embed?uri=spotify:user:spotify:playlist:37i9dQZF1DX9XIFQuFvzM4","https://open.spotify.com/embed?uri=spotify:user:spotify:playlist:37i9dQZF1DX6z20IXmBjWI","https://open.spotify.com/embed?uri=spotify:user:spotify:playlist:37i9dQZF1DX82pCGH5USnM","https://open.spotify.com/embed?uri=spotify:user:sonymusic:playlist:6bfxfMIcYKN4ce6XQOxoqY","https://open.spotify.com/embed?uri=spotify:user:spotify:playlist:37i9dQZF1DWVu0D7Y8cYcs"]
+    @randomPlaylist = @playlistArray.sample
+
     if @task.completeness_level == "Done"
         @compliment = Compliment.new
       end
+
   end
 
   def edit
